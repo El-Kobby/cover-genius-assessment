@@ -34,7 +34,7 @@
 - The base URL for tests is set to `http://www.rentalcover.com/`.
 - The application under test is stable and accessible at the above URL.
 - Test IDs (`data-test-id`) are present and unique for key elements, but some headings share the same test ID.
-- The test suite is designed for desktop browsers
+- The test suite is designed for desktop browsers but should work for mobile as well
 
 ## Issues Found
 - **Non-unique `data-test-id` attributes**: Multiple headings share the same `data-test-id="Heading-title"`, causing strict mode locator violations. Workarounds using `nth()` are implemented.
