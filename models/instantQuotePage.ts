@@ -31,21 +31,21 @@ export class InstantQuotePage {
 
         //locators for homepage instant quote form
         this.instantQuoteForm = page.locator('.booking-form')
-        this.rentalCountryDropdownLabel = page.locator(`//label[contains(., 'In which country are you renting your vehicle?')]`)
+        this.rentalCountryDropdownLabel = page.locator(`//label[contains(., 'In which country are you renting your vehicle?')]`)  // Using XPath here because there are no unique selectors or stable class names for this element, making XPath the most reliable way to locate it.
         this.rentalCountryDropdown = page.locator('#destinationCountry')
         this.rentalCountryInput = page.locator('#destinationCountry-input')
         this.rentalCoverageDateDropdownLabel = page.locator(`//label[contains(., 'Dates')]`)
         this.rentalCoverageStartDateSelector = page.locator('#coverageDates-startDate')
         this.rentalCoverageEndDateSelector = page.locator('#coverageDates-endDate')
-        this.policyOptions = page.locator(`//form[@class='booking-form']/div[2]`) //using xpath here as the cleanest option
+        this.policyOptions = page.locator(`//form[@class='booking-form']/div[2]`)
         this.defaultResidentCountrySelection = page.getByTestId('cor-country')
         this.countryChangeButton = page.getByTestId('cor-change-button')
-        this.residentCountryDropdownLabel = page.locator(`//label[contains(.,'Country of Residence')]`)
-        this.residentCountryDropdown = page.locator(`//label[contains(.,'Country of Residence')]/following-sibling::div`)
-        this.residentCountryInput = page.locator(`(//label[contains(.,'Country of Residence')]/following-sibling::div//input)[1]`)
+        this.residentCountryDropdownLabel = page.locator(`//label[contains(., 'Country of Residence')]`) // The XPath selects the <label> containing the text 'Country of Residence'
+        this.residentCountryDropdown = page.locator(`//label[contains(., 'Country of Residence')]/following-sibling::div`) // The XPath selects the <div> immediately following the label containing 'Country of Residence'
+        this.residentCountryInput = page.locator(`(//label[contains(., 'Country of Residence')]/following-sibling::div//input)[1]`)
         this.defaultVehicleTypeSelection = page.getByTestId('vehicle-type')
         this.vehicleTypeChangeButton = page.getByTestId('vehicle-change-button')
-        this.vehicleTypeDropdownLabel = page.locator(`//label[contains(.,'//label[contains(.,'Vehicle Type')]')]`)
+        this.vehicleTypeDropdownLabel = page.locator(`//label[contains(.,'Vehicle Type')]`)
         this.vehicleTypeDropdown = page.locator(`//label[contains(.,'Vehicle Type')]/following-sibling::div`)
         this.vehicleTypeInput = page.locator(`(//label[contains(.,'Vehicle Type')]/following-sibling::div//input)[1]`)
         this.getInstantQuoteButton = page.locator(`//button[contains(@data-analytics,'getInstantQuote')]`)

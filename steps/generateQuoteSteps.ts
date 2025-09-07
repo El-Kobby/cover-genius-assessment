@@ -1,5 +1,6 @@
-import { Page, expect } from '@playwright/test'
+import { Page } from '@playwright/test'
 import { InstantQuotePage } from '../models/instantQuotePage'
+
 
 export const fillInitialInstantQuoteForm = async (page: Page): Promise<void> => {
     const instantQuotePage = new InstantQuotePage(page)
@@ -11,7 +12,7 @@ export const fillInitialInstantQuoteForm = async (page: Page): Promise<void> => 
     await instantQuotePage.clickGetInstantQuoteButton()
 }
 
-export const fillRentalStatePickup = async (page: Page): Promise<void> => {
+export const selectRentalStatePickup = async (page: Page): Promise<void> => {
     const instantQuotePage = new InstantQuotePage(page)
     await instantQuotePage.selectRentalStatePickup('California')
 }
